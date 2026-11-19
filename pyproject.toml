@@ -1,0 +1,38 @@
+[project]
+name = "pythonproject"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ronituovinen", email = "roni.tuovinen@abo.fi" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.128.8",
+    "openai>=2.48.0",
+    "pgvector>=0.4.2",
+    "psycopg[binary]>=3.2.13",
+    "pydantic-settings>=2.11.0",
+    "uvicorn>=0.39.0",
+]
+
+[project.scripts]
+pythonproject = "pythonproject:main"
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "deepeval>=4.3.3",
+    "ollama>=0.6.3",
+    "pytest>=8.4.2",
+    "ruff>=0.17.5",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -1,0 +1,14 @@
+[
+  {
+    "question": "How do you declare a path parameter with a type annotation in FastAPI?",
+    "expected_output": "You declare path parameters using Python format string syntax in the path decorator (e.g., @app.get('/items/{item_id}')) and pass a matching parameter with a type annotation (e.g., item_id: int) to the path operation function."
+  },
+  {
+    "question": "What happens if a client sends a string for a path parameter annotated as int?",
+    "expected_output": "FastAPI automatically validates the data using Pydantic and returns a clear HTTP 422 validation error explaining that the input is not a valid integer."
+  },
+  {
+    "question": "How do you define optional query parameters in FastAPI?",
+    "expected_output": "Declare function parameters that are not part of the path and give them a default value of None (e.g., q: str | None = None)."
+  }
+]
