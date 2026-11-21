@@ -13,7 +13,7 @@ from src.generation.rag import answer_question
 DATASET = json.loads(Path("evals/dataset.json").read_text(encoding="utf-8"))
 
 judge_model = OllamaModel(
-    model=settings.chat_model,
+    model=settings.eval_model or settings.chat_model,
     base_url="http://localhost:11434",
 )
 
